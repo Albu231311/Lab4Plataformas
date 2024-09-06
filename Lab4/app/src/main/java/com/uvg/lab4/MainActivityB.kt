@@ -66,39 +66,33 @@ fun UserProfile() {
                     .fillMaxSize()
                     .padding(16.dp)
             ) {
-                // Fondo
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(200.dp) // Ajusta la altura según sea necesario
-                        .background(Color.LightGray.copy(alpha = 0.2f)) // Fondo con opacidad
-                        .padding(top = 76.dp) // Ajusta la posición del fondo
-                        .align(Alignment.CenterHorizontally)
-                )
-
-                // Imagen de perfil
-                Image(
-                    painter = painterResource(id = R.drawable.img1),
-                    contentDescription = "Imagen de perfil",
-                    modifier = Modifier
-                        .width(100.dp)
-                        .height(100.dp)
-                        .padding(top = 16.dp, start = 8.dp, end = 8.dp)
-                        .align(Alignment.CenterHorizontally)
-                )
-
-                // Imagen "biblioteca" detrás del fondo
-                Image(
-                    painter = painterResource(id = R.drawable.bibloteca),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .size(50.dp)
                         .padding(top = 16.dp)
-                        .graphicsLayer(alpha = 0.5f) // Ajusta la opacidad
+                        .height(200.dp)
                         .align(Alignment.CenterHorizontally)
-                )
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.biblioteca),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(400.dp)
+                            .graphicsLayer(alpha = 0.5f)
+                            .align(Alignment.Center)
+                    )
 
-                // Información de perfil
+                    Image(
+                        painter = painterResource(id = R.drawable.img1),
+                        contentDescription = "Imagen de perfil",
+                        modifier = Modifier
+                            .size(125.dp)
+                            .align(Alignment.Center)
+                            .offset(y = 50.dp)
+                    )
+                }
+
                 Text(
                     text = "FRANCISCO ROGELIO ANZUETO MARROQUIN",
                     style = MaterialTheme.typography.bodyLarge,
@@ -107,7 +101,6 @@ fun UserProfile() {
                         .align(Alignment.CenterHorizontally)
                 )
 
-                // Lista de opciones
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
@@ -125,13 +118,20 @@ fun UserProfile() {
                         text = "My Campus",
                         style = MaterialTheme.typography.bodyLarge
                     )
+                    Text(
+                        text = "Campus Central",
+                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 10.sp),
+                        modifier = Modifier
+                            .padding(top = 4.dp)
+                        
+
+                    )
                 }
-                // Repite el patrón para las demás opciones
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 15.dp)
+                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.personas),
@@ -149,7 +149,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 15.dp)
+                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.calendario),
@@ -167,7 +167,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 15.dp)
+                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.libro),
@@ -185,7 +185,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 15.dp)
+                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.aplus),
@@ -203,7 +203,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 15.dp)
+                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.dots),
@@ -221,7 +221,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 15.dp)
+                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.calendarioazul),
