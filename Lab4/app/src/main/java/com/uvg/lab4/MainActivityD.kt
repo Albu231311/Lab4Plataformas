@@ -20,7 +20,7 @@ class MainActivityD : ComponentActivity() {
         setContent {
             Lab4Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting3(
+                    GreetingD(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -31,7 +31,7 @@ class MainActivityD : ComponentActivity() {
 }
 
 @Composable
-fun Greeting3(name: String, modifier: Modifier = Modifier) {
+fun GreetingD(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier
@@ -42,6 +42,6 @@ fun Greeting3(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview3() {
     Lab4Theme {
-        Greeting("Android")
+        GreetingD("Android")
     }
 }

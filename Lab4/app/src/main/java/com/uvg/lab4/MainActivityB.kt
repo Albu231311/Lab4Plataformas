@@ -13,43 +13,45 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uvg.lab4.R
 
-class MainActivity : ComponentActivity() {
+class MainActivityB : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            UserProfile()
+            UserProfileB()
         }
     }
 }
 
 @Composable
-fun UserProfile() {
+fun UserProfileB() {
     Scaffold(
         topBar = {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(76.dp)
+                    .height(80.dp)
                     .padding(horizontal = 8.dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.rosca),
                     contentDescription = null,
                     modifier = Modifier
-                        .size(80.dp)
+                        .size(60.dp)
                         .align(Alignment.CenterEnd)
+                        .offset(y= 7.dp)
                 )
                 Text(
                     text = "My Profile",
                     modifier = Modifier
                         .align(Alignment.Center)
-                        .padding(horizontal = 50.dp),
-                    style = MaterialTheme.typography.headlineLarge.copy(fontSize = 30.sp)
+                        .padding(start = 0.dp, top = 25.dp, bottom = 8.dp),
+                    style = MaterialTheme.typography.headlineLarge.copy(fontSize = 23.sp,fontWeight= FontWeight.Companion.Bold)
                 )
             }
         }
@@ -64,48 +66,48 @@ fun UserProfile() {
                 verticalArrangement = Arrangement.Top,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(16.dp)
             ) {
                 Box(
                     modifier = Modifier
-                        .fillMaxWidth()
                         .padding(top = 16.dp)
                         .height(200.dp)
+                        .width(1000.dp)
                         .align(Alignment.CenterHorizontally)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.biblioteca),
                         contentDescription = null,
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .height(400.dp)
-                            .graphicsLayer(alpha = 0.5f)
+                            .height(500.dp)
+                            .width(900.dp)
+                            .graphicsLayer(alpha = 0.6f)
                             .align(Alignment.Center)
                     )
 
                     Image(
                         painter = painterResource(id = R.drawable.img1),
-                        contentDescription = "Imagen de perfil",
+                        contentDescription =null,
                         modifier = Modifier
-                            .size(125.dp)
+                            .size(130.dp)
                             .align(Alignment.Center)
-                            .offset(y = 50.dp)
+                            .offset(y = 65.dp)
                     )
                 }
 
                 Text(
                     text = "FRANCISCO ROGELIO ANZUETO MARROQUIN",
-                    style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier
-                        .padding(8.dp)
-                        .align(Alignment.CenterHorizontally)
+                        .padding(start = 0.dp, top = 26.dp, bottom = 8.dp)
+                        .align(Alignment.CenterHorizontally),
+                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp, fontWeight= FontWeight.Companion.Bold)
                 )
 
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 16.dp, bottom = 8.dp)
+                        .padding(start = 16.dp, top = 16.dp, bottom = 8.dp)
+
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.mycampus),
@@ -120,9 +122,11 @@ fun UserProfile() {
                     )
                     Text(
                         text = "Campus Central",
-                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 10.sp),
+                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 14.sp),
                         modifier = Modifier
-                            .padding(top = 4.dp)
+                            .padding(start = 0.dp, top = 4.dp, bottom = 20.dp)
+                            .offset(y = 26.dp)
+                            .offset(x = -90.dp)
                         
 
                     )
@@ -131,7 +135,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(start = 16.dp, top = 15.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.personas),
@@ -149,7 +153,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(start = 16.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.calendario),
@@ -167,7 +171,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(start = 16.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.libro),
@@ -185,7 +189,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(start = 16.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.aplus),
@@ -203,7 +207,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(start = 16.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.dots),
@@ -221,7 +225,7 @@ fun UserProfile() {
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(start = 16.dp, top = 8.dp, bottom = 25.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.calendarioazul),
@@ -242,6 +246,6 @@ fun UserProfile() {
 
 @Preview
 @Composable
-fun UserProfilePreview() {
-    UserProfile()
+fun UserProfilePreviewB() {
+    UserProfileB()
 }
