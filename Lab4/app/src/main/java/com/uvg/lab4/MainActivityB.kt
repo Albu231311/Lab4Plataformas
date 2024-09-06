@@ -85,11 +85,11 @@ fun UserProfile() {
                         .padding(start = 50.dp, top = 50.dp, bottom = 15.dp)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.rosca),
+                        painter = painterResource(id = R.drawable.mycampus),
                         contentDescription = null,
                         modifier = Modifier
                             .size(30.dp)
-                            .padding(end = 8.dp) 
+                            .padding(end = 8.dp)
                     )
                     Text(
                         text = "My Campus",
