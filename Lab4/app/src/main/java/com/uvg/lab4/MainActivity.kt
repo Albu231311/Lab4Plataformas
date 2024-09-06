@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -37,19 +38,16 @@ fun UserProfileA() {
                     .height(76.dp)
                     .padding(horizontal = 8.dp)
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.rosca),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .size(80.dp)
-                        .align(Alignment.CenterEnd)
-                )
                 Text(
-                    text = "Estas en la A",
+                    text = "Campus Central",
                     modifier = Modifier
                         .align(Alignment.Center)
-                        .padding(horizontal = 50.dp),
-                    style = MaterialTheme.typography.headlineLarge.copy(fontSize = 30.sp)
+                        .padding(horizontal = 60.dp)
+                        .offset(y = 25.dp),
+                    style = MaterialTheme.typography.headlineLarge.copy(
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                 )
             }
         }
@@ -59,182 +57,123 @@ fun UserProfileA() {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            Column(
-                horizontalAlignment = Alignment.Start,
-                verticalArrangement = Arrangement.Top,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(16.dp)
-            ) {
+            Box(modifier = Modifier.fillMaxSize()) {
+                // Imagen de la biblioteca
                 Box(
                     modifier = Modifier
                         .padding(top = 16.dp)
                         .height(200.dp)
-                        .width(1000.dp)
-                        .align(Alignment.CenterHorizontally)
+                        .fillMaxWidth()
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.biblioteca),
                         contentDescription = null,
                         modifier = Modifier
-                            .height(500.dp)
-                            .width(900.dp)
+                            .height(200.dp)
+                            .fillMaxWidth()
                             .graphicsLayer(alpha = 0.6f)
-                            .align(Alignment.Center)
-                    )
-
-                    Image(
-                        painter = painterResource(id = R.drawable.img1),
-                        contentDescription =null,
-                        modifier = Modifier
-                            .size(120.dp)
-                            .align(Alignment.Center)
-                            .offset(y = 65.dp)
                     )
                 }
 
+                // Texto "Destacados"
                 Text(
-                    text = "Estas en La A",
+                    text = "Destacados",
                     modifier = Modifier
-                        .padding(start = 0.dp, top = 16.dp, bottom = 8.dp)
-                        .align(Alignment.CenterHorizontally),
-                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp)
+                        .padding(start = 16.dp, top = 230.dp),
+                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 30.sp)
                 )
 
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
+                // Primera caja: Service Now
+                Box(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 0.dp, top = 16.dp, bottom = 8.dp)
+                        .padding(top = 280.dp, start = 16.dp)
+                        .size(width = 160.dp, height = 160.dp)
+                        .background(Color.LightGray)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.mycampus),
+                        painter = painterResource(id = R.drawable.rosca),
                         contentDescription = null,
-                        modifier = Modifier
-                            .size(30.dp)
-                            .padding(end = 8.dp)
+                        modifier = Modifier.fillMaxSize()
                     )
                     Text(
-                        text = "My Campus",
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                    Text(
-                        text = "Campus Central",
-                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 14.sp),
+                        text = "Service Now",
+                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
                         modifier = Modifier
-                            .padding(start = 0.dp, top = 4.dp, bottom = 20.dp)
-                            .offset(y = 26.dp)
-                            .offset(x = -90.dp)
+                            .align(Alignment.BottomCenter)
+                            .padding(8.dp)
+                    )
+                }
 
-
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
+                // Segunda caja: Actualidad UVG
+                Box(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.personas),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(30.dp)
-                            .padding(end = 8.dp)
-                    )
-                    Text(
-                        text = "My Friends",
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.calendario),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(30.dp)
-                            .padding(end = 8.dp)
-                    )
-                    Text(
-                        text = "My Calendar",
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(top = 280.dp, end = 16.dp)
+                        .size(width = 160.dp, height = 160.dp)
+                        .background(Color.LightGray)
+                        .align(Alignment.TopEnd)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.libro),
                         contentDescription = null,
-                        modifier = Modifier
-                            .size(30.dp)
-                            .padding(end = 8.dp)
+                        modifier = Modifier.fillMaxSize()
                     )
                     Text(
-                        text = "My Courses",
-                        style = MaterialTheme.typography.bodyLarge
+                        text = "Actualidad UVG",
+                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
+                        modifier = Modifier
+                            .align(Alignment.BottomCenter)
+                            .padding(8.dp)
                     )
                 }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
+
+                // Texto "Servicios y Recursos"
+                Text(
+                    text = "Servicios y Recursos",
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(start = 16.dp, top = 460.dp),
+                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 30.sp)
+                )
+
+                // Tercera caja: Directorio de Servicios
+                Box(
+                    modifier = Modifier
+                        .padding(top = 510.dp, start = 16.dp)
+                        .size(width = 160.dp, height = 160.dp)
+                        .background(Color.LightGray)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.aplus),
+                        painter = painterResource(id = R.drawable.img1),
                         contentDescription = null,
-                        modifier = Modifier
-                            .size(30.dp)
-                            .padding(end = 8.dp)
+                        modifier = Modifier.fillMaxSize()
                     )
                     Text(
-                        text = "My Grades",
-                        style = MaterialTheme.typography.bodyLarge
+                        text = "Directorio de Servicios",
+                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
+                        modifier = Modifier
+                            .align(Alignment.BottomCenter)
+                            .padding(8.dp)
                     )
                 }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
+
+                // Cuarta caja: Portal Web Bibliotecas
+                Box(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
+                        .padding(top = 510.dp, end = 16.dp)
+                        .size(width = 160.dp, height = 160.dp)
+                        .background(Color.LightGray)
+                        .align(Alignment.TopEnd)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.dots),
+                        painter = painterResource(id = R.drawable.mycampus),
                         contentDescription = null,
-                        modifier = Modifier
-                            .size(30.dp)
-                            .padding(end = 8.dp)
+                        modifier = Modifier.fillMaxSize()
                     )
                     Text(
-                        text = "My Groups",
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 0.dp, top = 8.dp, bottom = 25.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.calendarioazul),
-                        contentDescription = null,
+                        text = "Portal Web Bibliotecas",
+                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
                         modifier = Modifier
-                            .size(30.dp)
-                            .padding(end = 8.dp)
-                    )
-                    Text(
-                        text = "My Upcoming Events",
-                        style = MaterialTheme.typography.bodyLarge
+                            .align(Alignment.BottomCenter)
+                            .padding(8.dp)
                     )
                 }
             }
