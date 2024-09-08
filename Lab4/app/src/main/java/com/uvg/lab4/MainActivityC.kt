@@ -220,3 +220,4 @@ fun Mainscreen() {
 fun MainPreview1() {
     Mainscreen()
 }
+
