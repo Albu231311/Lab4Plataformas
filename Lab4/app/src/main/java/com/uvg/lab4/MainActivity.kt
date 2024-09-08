@@ -43,7 +43,7 @@ fun UserProfileA() {
                     modifier = Modifier
                         .align(Alignment.Center)
                         .padding(horizontal = 60.dp)
-                        .offset(y = 25.dp),
+                        .offset(y = 10.dp),
                     style = MaterialTheme.typography.headlineLarge.copy(
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold
@@ -58,119 +58,141 @@ fun UserProfileA() {
                 .padding(innerPadding)
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
-                // Imagen de la biblioteca
+
                 Box(
                     modifier = Modifier
-                        .padding(top = 16.dp)
-                        .height(200.dp)
+
                         .fillMaxWidth()
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.biblioteca),
+                        painter = painterResource(id = R.drawable.lab),
                         contentDescription = null,
                         modifier = Modifier
-                            .height(200.dp)
+                            .fillMaxSize()
                             .fillMaxWidth()
-                            .graphicsLayer(alpha = 0.6f)
+                            .offset(y=-300.dp)
                     )
                 }
 
-                // Texto "Destacados"
                 Text(
                     text = "Destacados",
                     modifier = Modifier
                         .padding(start = 16.dp, top = 230.dp),
-                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 30.sp)
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
                 )
 
-                // Primera caja: Service Now
                 Box(
                     modifier = Modifier
                         .padding(top = 280.dp, start = 16.dp)
                         .size(width = 160.dp, height = 160.dp)
-                        .background(Color.LightGray)
+                        .background(Color(0xFF4CAF50))
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.rosca),
+                        painter = painterResource(id = R.drawable.services),
                         contentDescription = null,
-                        modifier = Modifier.fillMaxSize()
+                        modifier = Modifier
+                            .height(140.dp)
+                            .fillMaxWidth()
                     )
                     Text(
                         text = "Service Now",
-                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
+                        style = MaterialTheme.typography.bodyLarge.copy(
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Medium
+
+                        ),
                         modifier = Modifier
                             .align(Alignment.BottomCenter)
                             .padding(8.dp)
+                            .offset(y=11.dp)
                     )
                 }
 
-                // Segunda caja: Actualidad UVG
                 Box(
                     modifier = Modifier
                         .padding(top = 280.dp, end = 16.dp)
                         .size(width = 160.dp, height = 160.dp)
-                        .background(Color.LightGray)
+                        .background(Color(0xFF9E9E9E))
                         .align(Alignment.TopEnd)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.libro),
+                        painter = painterResource(id = R.drawable.update),
                         contentDescription = null,
-                        modifier = Modifier.fillMaxSize()
+                        modifier = Modifier
+                            .height(140.dp)
+                            .fillMaxWidth()
                     )
                     Text(
                         text = "Actualidad UVG",
-                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
+                        style = MaterialTheme.typography.bodyLarge.copy(
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Medium
+                        ),
                         modifier = Modifier
                             .align(Alignment.BottomCenter)
                             .padding(8.dp)
+                            .offset(y=11.dp)
                     )
                 }
 
-                // Texto "Servicios y Recursos"
                 Text(
                     text = "Servicios y Recursos",
                     modifier = Modifier
                         .padding(start = 16.dp, top = 460.dp),
-                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 30.sp)
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                 )
 
-                // Tercera caja: Directorio de Servicios
                 Box(
                     modifier = Modifier
                         .padding(top = 510.dp, start = 16.dp)
                         .size(width = 160.dp, height = 160.dp)
-                        .background(Color.LightGray)
+                        .background(Color(0xFF4CAF50))
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.img1),
+                        painter = painterResource(id = R.drawable.dds),
                         contentDescription = null,
-                        modifier = Modifier.fillMaxSize()
+                        modifier = Modifier
+                            .height(140.dp)
+                            .fillMaxWidth()
                     )
                     Text(
                         text = "Directorio de Servicios",
-                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
+                        style = MaterialTheme.typography.bodyLarge.copy(
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Medium
+                        ),
                         modifier = Modifier
                             .align(Alignment.BottomCenter)
                             .padding(8.dp)
                     )
                 }
 
-                // Cuarta caja: Portal Web Bibliotecas
                 Box(
                     modifier = Modifier
                         .padding(top = 510.dp, end = 16.dp)
                         .size(width = 160.dp, height = 160.dp)
-                        .background(Color.LightGray)
+                        .background(Color(0xFF9E9E9E)) 
                         .align(Alignment.TopEnd)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.mycampus),
+                        painter = painterResource(id = R.drawable.web),
                         contentDescription = null,
-                        modifier = Modifier.fillMaxSize()
+                        modifier = Modifier
+                            .height(140.dp)
+                            .fillMaxWidth()
                     )
                     Text(
                         text = "Portal Web Bibliotecas",
-                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
+                        style = MaterialTheme.typography.bodyLarge.copy(
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Medium
+                        ),
                         modifier = Modifier
                             .align(Alignment.BottomCenter)
                             .padding(8.dp)
