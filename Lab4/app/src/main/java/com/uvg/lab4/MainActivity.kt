@@ -30,14 +30,35 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.res.painterResource
 import com.uvg.lab4.R
+import androidx.navigation.compose.rememberNavController
 
+import androidx.compose.material3.Surface
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.uvg.lab4.ui.theme.Lab4Theme
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.platform.LocalContext
 
-class MainActivityA : ComponentActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            UserProfileA()
+            Lab4Theme {
+                Surface(color = MaterialTheme.colorScheme.background) {
+                    Navigation()
+                }
+            }
         }
+    }
+}
+
+@Composable
+fun Navigation() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "main_activity_b") {
+        composable("main_activity_b") { UserProfileB() }
+        composable("main_activity_a") { UserProfileA() }
     }
 }
 
@@ -190,7 +211,7 @@ fun UserProfileA() {
                     modifier = Modifier
                         .padding(top = 510.dp, end = 16.dp)
                         .size(width = 160.dp, height = 160.dp)
-                        .background(Color(0xFF9E9E9E)) 
+                        .background(Color(0xFF9E9E9E))
                         .align(Alignment.TopEnd)
                 ) {
                     Image(

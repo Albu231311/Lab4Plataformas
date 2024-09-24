@@ -1,5 +1,6 @@
 package com.example.lab4
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -17,6 +18,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.platform.LocalContext
+
 import com.uvg.lab4.R
 
 class MainActivityB : ComponentActivity() {
@@ -24,12 +28,14 @@ class MainActivityB : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             UserProfileB()
+
         }
     }
 }
 
 @Composable
 fun UserProfileB() {
+    val context = LocalContext.current
     Scaffold(
         topBar = {
             Box(
@@ -107,14 +113,17 @@ fun UserProfileB() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(start = 16.dp, top = 16.dp, bottom = 8.dp)
-
+                        .clickable {
+                            val intent = Intent(context, MainActivity::class.java)
+                            context.startActivity(intent)
+                        }
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.mycampus),
                         contentDescription = null,
                         modifier = Modifier
                             .size(30.dp)
-                            .padding(end = 8.dp)
+                            .padding(end = 8.dp),
                     )
                     Text(
                         text = "My Campus",
