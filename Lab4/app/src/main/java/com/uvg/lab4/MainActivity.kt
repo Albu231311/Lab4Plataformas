@@ -217,9 +217,10 @@ fun UserProfileA() {
     }
 }
 
-@Preview
-
-
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
 @Composable
 fun GreetingPreview() {
     UserProfileA()

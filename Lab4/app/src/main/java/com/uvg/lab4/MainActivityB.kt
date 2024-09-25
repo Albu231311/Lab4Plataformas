@@ -17,6 +17,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+<<<<<<< Updated upstream
+=======
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.platform.LocalContext
+import com.uvg.lab4.MainActivityD
+
+>>>>>>> Stashed changes
 import com.uvg.lab4.R
 
 class MainActivityB : ComponentActivity() {
@@ -45,6 +52,10 @@ fun UserProfileB() {
                         .size(60.dp)
                         .align(Alignment.CenterEnd)
                         .offset(y= 7.dp)
+                        .clickable {
+                            val intent = Intent(context, MainActivityD::class.java)
+                            context.startActivity(intent)
+                        }
                 )
                 Text(
                     text = "My Profile",
@@ -244,7 +255,10 @@ fun UserProfileB() {
     }
 }
 
-@Preview
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
 @Composable
 fun UserProfilePreviewB() {
     UserProfileB()
